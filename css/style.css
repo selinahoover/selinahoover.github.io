@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700');
+@import url('https://fonts.googleapis.com/css?family=Ruslan+Display|Titillium+Web:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+/*  Reset CSS  */
+* { margin:0;  padding:0;}
+ul,li {list-style: none; text-decoration: none;}
+a { outline:0; text-decoration:none; display: inline-block; color:#bbb;}
+img { border:0; max-width: 100%;}
+label, span, a{ display: inline-block;}
+button{border:0; background: none; outline: none; cursor: pointer;}
+body{font-family: 'Nanum Gothic', sans-serif; font-size: 18px;}
+.text-overflow{text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+.skip{font-size: 0; text-indent: -9999px; position: absolute; left:-9999px;}
+h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
+/* common */
+.bg-pantone{background: #6963ac;}
+.bg-lavender{background: #604b8c;}
+.bg-white{background: #fff;}
+.center{text-align: center;}
+.p20{padding: 20px;}
+.sizing{box-sizing: border-box; overflow: hidden;}
+#sideNav,h2,h3,.type,.sub_title,button{font-family: 'Roboto', sans-serif;}
+
+/* color  :  #745bf5; #604b8c; #6963ac; #fff; */
+
+
+/* loading---------------------------------------------------------------------- */
+#loading{
+  position: fixed; top: 0; left:0;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, #0f8, #08f);
+  font-family: sans-serif;
+  animation: bg 10s infinite;
+  z-index: 100;}
+.loading{
+  position: absolute;
+  top:50%; left: 50%;
+  transform: translate(-50%, -50%);
+  height: 150px;}
+.loading h1{color: #fff; letter-spacing: 10px;}
+.loading div{
+  width: 10px; height: 50px;
+  background:  rgba(255,255,255,0.7);
+  position: absolute;
+  bottom :0;
+  border-radius: 5px;
+  margin-left: -5px;
+  animation: bar 1.5s infinite;}
+.loading .bar1{left:40%;}
+.loading .bar2{left:50%; animation-delay: 0.1s;}
+.loading .bar3{left:60%;animation-delay: 0.2s;}
+@keyframes bg {
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}}
+@keyframes bar {
+  0%{transform: translateY(0);}
+  33%{transform: translateY(24px); height: 10px;}
+  66%{transform: translateY(-16px);}
+  88%{transform: translateY(4px);}
+  100%{transform: translateY(0);}}
+
+
+/* 위로가기 --------------------------------------------------------------------- */
+#goTop{
+  position: fixed; right:15px; bottom: 35px; transition:1s; top:initial;
+  visibility: hidden; opacity: 0;
+}
+#goTop.on{visibility: visible; opacity: 1;}
+.btn-Warning{font-size: 30px;}
+.btn-Warning:hover{background: #604b8c;}
+
+/* nav ------------------------------------------------------------------------- */
+#sideNav{
+  position: fixed; left: -400px; height: 100%; width: 400px;
+  padding: 100px 0; transition: 0.5s; box-sizing: border-box;}
+#menu{position: absolute; right: -50px; top: 10px;}
+#menu i{font-size: 50px; color: #604b8c;}
+#sideNav ul{position: relative;top: 50%; transform: translateY(-50%);text-align: center; display: none;}
+#sideNav ul li{padding: 30px 0;}
+#sideNav ul li a:hover{color: #745bf5; font-size: 2em; transition: 1.5s;}
+#sideNav ul li a{font-size: 30px; color: #fff; line-height: 50px;}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{background: none;}
+.nav>li>a:focus, .nav>li>a:hover{background: none;}
+
+#sideNav.open{left: 0px; transition: 0.5s; z-index: 1;}
+
+/* home ------------------------------------------------------------------------ */
+#home{height: 90vh; font-family: 'Titillium Web', sans-serif; }
+#home .logo{position:absolute; transform:translatex(-50%); bottom:63px; left:50%;}
+#home .values ul{color:#6963ac;}
+#home .values ul li{position: absolute; font-size: 40px; font-weight: bold;
+    transition: 1s;
+  }
+#home .values ul li span{width: 20px; height: 20px;
+    border-radius: 50%; margin-left: 80px;}
+#home .values ul li:nth-child(1){left: 10%;bottom: 242px;}
+#home .values ul li:nth-child(2){left: 15%; bottom: 597px; transform: rotate(30deg);}
+#home .values ul li:nth-child(3){left: 50%; top: 12%; margin-left: 15px;
+  transform: rotate(90deg) translateX(-50%); transform-origin: left;}
+#home .values ul li:nth-child(3) span{margin-left:50px;; transform: rotate(0deg);}
+#home .values ul li:nth-child(4) span,#home .values ul li:nth-child(5) span{margin-left:0; margin-right: 80px;}
+#home .values ul li:nth-child(4){right:13%; bottom: 552px; transform: rotate(-30deg);}
+#home .values ul li:nth-child(5){right:10%; bottom: 242px;}
+
+/* about skills ---------------------------------------------------------------- */
+#about{color:#fff; overflow: hidden; padding-bottom: 100px;}
+#about > div{visibility: hidden; padding: 50px;}
+#about > div:nth-child(1){text-align: right;}
+#about > div dl{padding-bottom:25px;}
+#about > div dl dt{padding-bottom: 5px;}
+.slide-left{visibility: visible !important; animation: left 2s;}
+.slide-right{visibility: visible !important; animation: right 2s;}
+@keyframes left {
+  0%{opacity: 0; transform: translateX(-100%);}
+  100%{opacity: 1; transform: translateX(0%);}
+}
+@keyframes right {
+  0%{opacity: 0; transform: translateX(100%);}
+  100%{opacity: 1; transform: translateX(0%);}
+}
+@media (max-width:1200px) {
+  #about > div{text-align: center !important;}
+}
+
+
+/* portfolio -------------------------------------------------------------------*/
+/* 공통 */
+#portfolio h2{color: #604b8c;}
+#portfolio .img-box{margin-top: 50px;}
+#portfolio .Works4 .img-box,#portfolio .Works5 .img-box{margin-top: 100px;}
+#portfolio .img-box img{}
+#portfolio .dt-box{}
+#portfolio dl{ display:inline-block; margin-bottom: 50px; text-align:left;}
+#portfolio dt{padding-bottom: 10px;}
+#portfolio dt .number{font-size:50px; color:#604b8c; padding-right:20px; vertical-align:sub;}
+#portfolio dt .title{font-size: 25px; font-weight: bold;}
+#portfolio dt .type{font-size: 25px; font-weight: 100; padding-left: 20px;}
+#portfolio .sub_title{font-weight: bold;}
+#portfolio dd span{width:20px; height:20px; background:#ccc; border-radius:50%; vertical-align:middle;}
+#portfolio dd{line-height: 35px;}
+#portfolio dd:nth-child(3){padding-bottom: 20px;}
+#portfolio button{width:250px; height:80px; border-radius:30px;
+    color:#fff; font-size:20px; font-weight:bold;}
+#portfolio button:hover{background:rgba(96, 75, 140,0.9); color:#604b8c;}
+.glyphicon-zoom-in,.glyphicon-hdd{padding-right: 10px;}
+
+/* Works1 */
+#portfolio .Works1{}
+#portfolio .Works1 dd .color1{background:#e0e0ad;}
+#portfolio .Works1 dd .color2{background:#aebf65;}
+#portfolio .Works1 dd .color3{background:#6b7332;}
+/* Works2 */
+#portfolio .Works2 dd .color1{background:#d4ddb0;}
+#portfolio .Works2 dd .color2{background:#aebf65;}
+#portfolio .Works2 dd .color3{background:#8fa63c;}
+#portfolio .Works2 dd .color4{background:#6b7332;}
+/* Works3 */
+#portfolio .Works3 dd .color1{background:#e0e0ad;}
+#portfolio .Works3 dd .color2{background:#8fa63c;}
+#portfolio .Works3 dd .color3{background:#aebf65;}
+#portfolio .Works3 dd .color4{background:#6b7332;}
+/* Works4 */
+#portfolio .Works4 dd .color1{background:#e0e0ad;}
+#portfolio .Works4 dd .color2{background:#8fa63c;}
+#portfolio .Works4 dd .color3{background:#aebf65;}
+#portfolio .Works4 dd .color4{background:#6b7332;}
+/* Works5 */
+#portfolio .Works5 dd .color1{background:#e0e0ad;}
+#portfolio .Works5 dd .color2{background:#8fa63c;}
+#portfolio .Works5 dd .color3{background:#aebf65;}
+#portfolio .Works5 dd .color4{background:#6b7332;}
+/* Works6 */
+#portfolio .Works6{padding-bottom: 300px;}
+#portfolio .Works6 dd .color1{background:#ed1c24;}
+#portfolio .Works6 dd .color2{background:#b3b3b3;}
+#portfolio .Works6 dd .color3{background:#c2c2c2;}
+#portfolio .Works6 dd .color4{background:#000;}
+
+
+/* footer contact --------------------------------------------------------------*/
+#contact {}
+#contact h3{font-size:30px; font-weight:bold;
+    color:#fff; padding-left:30px;}
+#contact ul{padding-left: 50px;}
+#contact li{float:left; padding:0 15px; line-height:28px; color:#fff;}
+#contact .con2 li{float: none;}
+#contact a{color: #fff;}
+#contact a:focus, #contact a:hover{color:#000; text-decoration:none;}
+#contact li span{padding-right: 10px;}
+#contact  li:nth-child(2) span{padding-left:3px; padding-right: 12px;}
+#contact .con1{}
+#contact .con2{padding-left: 50px;}
+#contact .text-center{clear: both;font-size:20px; color:#604b8c; padding: 50px 0;}
+
+
+/* media query -----------------------------------------------------------------*/
+@media (min-width:768px){
+  #home{transform: scale(0.8);}
+  #portfolio .Works5 .dt-box,#portfolio .Works6 .dt-box{padding-left: 80px;}
+}
