@@ -8,15 +8,19 @@ $(function(){
     },2000,function(){
       $(this).remove();
       $('html, body').removeAttr('style');
+      $('#home .logo').fadeIn(800);
+      $('#home .values li .title').fadeIn(3200);
+      $('#home .values li .cir2').fadeIn(1300);
+      $('#home .values li .cir1').fadeIn(2000);
     })
   })
 
-  // nav -----------------------------------------------------------------------
-  function resizing(){
-    var contentH=$('section').height();
-    var sidenavW=$('#sideNav').width();
-    $('#sideNav').height(contentH);
-    $('#sideNav > div').width(sidenavW);
+    function resizing(){
+    // nav ---------------------------------------------------------------------
+    // var contentH=$('section').height();
+    // var sidenavW=$('#sideNav').width();
+    // $('#sideNav').height(contentH);
+    // $('#sideNav > div').width(sidenavW);
   }
   $('#sideNav button').click(function(){
     $('#menu i').toggleClass('fa-bars fa-times');
@@ -38,6 +42,7 @@ $(function(){
     }else{
       $('#goTop').removeClass('on');
     }
+
   // about skills --------------------------------------------------------------
     $('#about > div').each(function(index){
       var position=$(this).offset().top;

@@ -74,7 +74,7 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 /* nav ------------------------------------------------------------------------- */
 #sideNav{
   position: fixed; left: -400px; height: 100%; width: 400px;
-  padding: 100px 0; transition: 0.5s; box-sizing: border-box;}
+  padding: 100px 0; transition: 0.5s; box-sizing: border-box; z-index: 10;}
 #menu{position: absolute; right: -50px; top: 10px;}
 #menu i{font-size: 50px; color: #604b8c;}
 #sideNav ul{position: relative;top: 50%; transform: translateY(-50%);text-align: center; display: none;}
@@ -84,25 +84,28 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{background: none;}
 .nav>li>a:focus, .nav>li>a:hover{background: none;}
 
-#sideNav.open{left: 0px; transition: 0.5s; z-index: 1;}
+#sideNav.open{left: 0px; transition: 0.5s; z-index: 10;}
 
 /* home ------------------------------------------------------------------------ */
-#home{height: 90vh; font-family: 'Titillium Web', sans-serif; }
-#home .logo{position:absolute; transform:translatex(-50%); bottom:63px; left:50%;}
+#home{height: 100vh; font-family: 'Titillium Web', sans-serif;}
+#home .logo{position:absolute; transform:translatex(-50%); bottom:5%; left:50%;}
+#home .logo{display: none;}
 #home .values ul{color:#6963ac;}
-#home .values ul li{position: absolute; font-size: 40px; font-weight: bold;
-    transition: 1s;
-  }
-#home .values ul li span{width: 20px; height: 20px;
+#home .values ul li{position: absolute; font-size: 40px; font-weight: bold;}
+#home .values ul li .cir1,#home .values ul li .cir2{display: none;
+    width: 20px; height: 20px;
     border-radius: 50%; margin-left: 80px;}
-#home .values ul li:nth-child(1){left: 10%;bottom: 242px;}
-#home .values ul li:nth-child(2){left: 15%; bottom: 597px; transform: rotate(30deg);}
-#home .values ul li:nth-child(3){left: 50%; top: 12%; margin-left: 15px;
+#home .values ul li:nth-child(4) .cir1,#home .values ul li:nth-child(4) .cir2,
+#home .values ul li:nth-child(5) .cir1,#home .values ul li:nth-child(5) .cir2{margin-left: 0;}
+#home .values ul li .title{display: none;}
+#home .values ul li:nth-child(1){left: 10%;bottom: 25%;}
+#home .values ul li:nth-child(2){left: 15%; bottom: 62%; transform: rotate(30deg);}
+#home .values ul li:nth-child(3){left: 50%; bottom: 75%; margin-left: 15px;
   transform: rotate(90deg) translateX(-50%); transform-origin: left;}
-#home .values ul li:nth-child(3) span{margin-left:50px;; transform: rotate(0deg);}
-#home .values ul li:nth-child(4) span,#home .values ul li:nth-child(5) span{margin-left:0; margin-right: 80px;}
-#home .values ul li:nth-child(4){right:13%; bottom: 552px; transform: rotate(-30deg);}
-#home .values ul li:nth-child(5){right:10%; bottom: 242px;}
+#home .values ul li:nth-child(3) .cir1,.cir2{margin-left:50px;; transform: rotate(0deg);}
+#home .values ul li:nth-child(4) .cir1,.cir2,#home .values ul li:nth-child(5) .cir1,.cir2{margin-left:0; margin-right: 80px;}
+#home .values ul li:nth-child(4){right:13%; bottom: 62%; transform: rotate(-30deg);}
+#home .values ul li:nth-child(5){right:10%; bottom: 25%;}
 
 /* about skills ---------------------------------------------------------------- */
 #about{color:#fff; overflow: hidden; padding-bottom: 100px;}
@@ -180,7 +183,6 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 
 
 /* footer contact --------------------------------------------------------------*/
-#contact {}
 #contact h3{font-size:30px; font-weight:bold;
     color:#fff; padding-left:30px;}
 #contact ul{padding-left: 50px;}
@@ -196,7 +198,38 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 
 
 /* media query -----------------------------------------------------------------*/
-@media (min-width:768px){
-  #home{transform: scale(0.8);}
-  #portfolio .Works5 .dt-box,#portfolio .Works6 .dt-box{padding-left: 80px;}
+/* 태블릿 */
+@media (min-width:768px) and (max-width:991px){
+  #home .logo{bottom: 13%;}
+  #home .values ul li .cir1,#home .values ul li .cir2{opacity: 0;}
+  #portfolio .Works5 .dt-box,#portfolio .Works6 .dt-box{padding-left: 70px;}
+  #home .values ul li:nth-child(2){left: 9%; bottom: 39%;}
+  #home .values ul li:nth-child(3){bottom: 45%; left: 48%; padding-bottom: 25px;}
+  #home .values ul li:nth-child(4){right: 9%; bottom: 39%;}
+  #contact ul{padding-left: 20px;}
+  #contact li{padding: 0;}
+  #contact .con1 ul li:nth-child(3){max-width: 60%;}
+}
+/* 스마트폰 */
+@media (max-width:767px) {
+  #sideNav{width: 250px; left: -250px;}
+  #menu i {font-size: 39px;}
+  #sideNav ul li a{font-size: 21px; line-height: 0px;}
+  #sideNav ul li a:hover {font-size: 1.5em;}
+  #home .values ul li .cir1,#home .values ul li .cir2{opacity: 0;}
+  #home .values ul li{font-size: 31px;}
+  #home .values ul li:nth-child(1){left: -5%; bottom: 32%}
+  #home .values ul li:nth-child(2){left: 46%; bottom: 36%; transform: rotate(0deg);}
+  #home .values ul li:nth-child(3){left: -2%; bottom: 54%; padding-right: 32px;
+    transform: rotate(0deg) translateX(0%);}
+  #home .values ul li:nth-child(4){right: 0%; bottom: 72%; padding-left: 177px;
+    transform: rotate(0deg);}
+  #home .values ul li:nth-child(5){right: 11%; bottom: 84%; padding-right: 52px;}
+  h2 {font-size: 40px; padding-top: 40px;}
+  #portfolio .dt-box {padding: 30px;}
+  #portfolio dt .type,#portfolio dt .type{font-size: 20px;}
+  #portfolio .Works6 {padding-bottom: 100px;}
+  .btn-Warning {font-size: 20px;}
+  #contact .con2 {padding-left: 0px;}
+  #contact .con1 ul li img{width:50%;}
 }
