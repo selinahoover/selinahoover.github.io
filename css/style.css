@@ -123,10 +123,6 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
   0%{opacity: 0; transform: translateX(100%);}
   100%{opacity: 1; transform: translateX(0%);}
 }
-@media (max-width:1200px) {
-  #about > div{text-align: center !important;}
-}
-
 
 /* portfolio -------------------------------------------------------------------*/
 /* 공통 */
@@ -183,8 +179,7 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 
 
 /* footer contact --------------------------------------------------------------*/
-#contact h3{font-size:30px; font-weight:bold;
-    color:#fff; padding-left:30px;}
+#contact h3{font-size:30px; font-weight:bold; color:#fff; padding-left:30px;}
 #contact ul{padding-left: 50px;}
 #contact li{float:left; padding:0 15px; line-height:28px; color:#fff;}
 #contact .con2 li{float: none;}
@@ -192,44 +187,107 @@ h2{font-size: 50px; font-weight: bold; padding-top: 100px;}
 #contact a:focus, #contact a:hover{color:#000; text-decoration:none;}
 #contact li span{padding-right: 10px;}
 #contact  li:nth-child(2) span{padding-left:3px; padding-right: 12px;}
-#contact .con1{}
 #contact .con2{padding-left: 50px;}
-#contact .text-center{clear: both;font-size:20px; color:#604b8c; padding: 50px 0;}
+#contact .center{clear: both; font-size:16px; color:#6963ac; padding: 50px 0;}
 
 
 /* media query -----------------------------------------------------------------*/
-/* 태블릿 */
-@media (min-width:768px) and (max-width:991px){
-  #home .logo{bottom: 13%;}
-  #home .values ul li .cir1,#home .values ul li .cir2{opacity: 0;}
-  #portfolio .Works5 .dt-box,#portfolio .Works6 .dt-box{padding-left: 70px;}
-  #home .values ul li:nth-child(2){left: 9%; bottom: 39%;}
-  #home .values ul li:nth-child(3){bottom: 45%; left: 48%; padding-bottom: 25px;}
-  #home .values ul li:nth-child(4){right: 9%; bottom: 39%;}
-  #contact ul{padding-left: 20px;}
-  #contact li{padding: 0;}
-  #contact .con1 ul li:nth-child(3){max-width: 60%;}
+/* 공통 */
+@media (min-width:130px) and (max-width:1333px){
+  #home .values ul li .cir1,#home .values ul li .cir2{margin:0; padding:0; width:0; height:0; display:none;}
+}
+@media (min-width:130px) and (max-width:767px){
+  h2 {font-size: 40px; padding-top: 40px;}
+  #home .values ul li{font-size: 31px; transform: rotate(0deg); padding-right:0;}
+  #home .values ul li:nth-child(1){bottom: 44%;}
+  #home .values ul li:nth-child(2){bottom: 53%;}
+  #home .values ul li:nth-child(3){bottom: 62%; transform: rotate(0deg) translateX(0%);}
+  #home .values ul li:nth-child(4){bottom: 72%; transform: rotate(0deg);}
+  #home .values ul li:nth-child(5){bottom: 82%;}
+}
+/* 사이즈별 */
+@media (min-width:501px) and (max-width:767px){
+  #home .values ul li:nth-child(1){left: 44%;}
+  #home .values ul li:nth-child(2){left: 43%;}
+  #home .values ul li:nth-child(3){left: 43%;}
+  #home .values ul li:nth-child(4){left: 6%;}
+  #home .values ul li:nth-child(5){left: 3%;}
+}
+@media (min-width:400px) and (max-width:500px){
+  #home .values ul li:nth-child(1){left: 35%;}
+  #home .values ul li:nth-child(2){left: 34%;}
+  #home .values ul li:nth-child(3){left: 33%;}
+  #home .values ul li:nth-child(4){left: -8%;}
+  #home .values ul li:nth-child(5){left: -12%;}
+}
+@media (min-width:130px) and (max-width:399px){
+  #home .values ul li:nth-child(1){left:32%;}
+  #home .values ul li:nth-child(2){left:30%;}
+  #home .values ul li:nth-child(3){left:30%;}
+  #home .values ul li:nth-child(4){left:-8%;}
+  #home .values ul li:nth-child(5){left:-14%;}
 }
 /* 스마트폰 */
-@media (max-width:767px) {
+@media  (min-width:130px) and (max-width:500px){
+  body{font-size: 15px;}
+  #home .logo img{max-width: 200px;}
+  #sideNav{left: -200px; width: 200px;}
+  #menu{right:-33px;}
+  #menu i{font-size: 30px;}
+  #sideNav ul li{padding: 0;}
+  #sideNav ul li a{font-size: 22px;}
+  #about>div{padding:10px 30px;}
+  #about{padding: 20px;}
+  #portfolio .img-box{margin-top: 0;}
+  #portfolio .dt-box{margin:0 20px;}
+  #portfolio dl{text-align: center;}
+  #portfolio dt .number{letter-spacing: -5px; font-size: 40px;}
+  #portfolio dt .title{font-size: 20px; letter-spacing: -2px;}
+  #portfolio dt .type{font-size:18px; letter-spacing:-1px; padding-left:10px;}
+  #portfolio dd{line-height:30px;}
+  #portfolio .Works6{padding-bottom:100px;}
+  #contact .center{font-size:10px; padding:10px 0;}
+  .btn-Warning{font-size:20px;}
+  .btn{padding:0;}
+  #contact li{padding: 0;}
+  #contact .con1 ul li:nth-child(1),#contact .con1 ul li:nth-child(2){width:35px;}
+  #contact .con1 ul li:nth-child(3){width:160px;}
+  #contact .con2{padding-left:15px;}
+}
+@media (min-width:501px) and (max-width:767px){
   #sideNav{width: 250px; left: -250px;}
   #menu i {font-size: 39px;}
   #sideNav ul li a{font-size: 21px; line-height: 0px;}
   #sideNav ul li a:hover {font-size: 1.5em;}
-  #home .values ul li .cir1,#home .values ul li .cir2{opacity: 0;}
-  #home .values ul li{font-size: 31px;}
-  #home .values ul li:nth-child(1){left: -5%; bottom: 32%}
-  #home .values ul li:nth-child(2){left: 46%; bottom: 36%; transform: rotate(0deg);}
-  #home .values ul li:nth-child(3){left: -2%; bottom: 54%; padding-right: 32px;
-    transform: rotate(0deg) translateX(0%);}
-  #home .values ul li:nth-child(4){right: 0%; bottom: 72%; padding-left: 177px;
-    transform: rotate(0deg);}
-  #home .values ul li:nth-child(5){right: 11%; bottom: 84%; padding-right: 52px;}
-  h2 {font-size: 40px; padding-top: 40px;}
+  #about{padding-bottom: 50px;}
+  #about > div{padding: 10px 40px;}
   #portfolio .dt-box {padding: 30px;}
-  #portfolio dt .type,#portfolio dt .type{font-size: 20px;}
+  #portfolio dt .title,#portfolio dt .type{font-size: 19px;}
+  #portfolio .Works5 dt .type,#portfolio .Works6 dt .type{padding-left: 80px; letter-spacing: -1px;}
   #portfolio .Works6 {padding-bottom: 100px;}
   .btn-Warning {font-size: 20px;}
-  #contact .con2 {padding-left: 0px;}
-  #contact .con1 ul li img{width:50%;}
+  #contact ul{padding-left: 15px;}
+  #contact .con1 ul li{padding: 0;}
+  #contact .con1 ul li:nth-child(1){padding-left: 15px;}
+  #contact .con1 ul li:nth-child(3){max-width: 200px;}
+  #contact .con1 ul li img{max-width: 400px;}
+  #contact .con2{padding-left: 15px; padding-bottom: 15px;}
+  #contact .center{font-size: 12px; padding: 10px 0;}
+}
+
+/* 태블릿 */
+@media (min-width:768px) and (max-width:991px){
+  #home .logo{bottom: 13%;}
+  #home .values ul li:nth-child(1){left: 10%; bottom: 30%;}
+  #home .values ul li:nth-child(2){left: 9%; bottom: 56%;}
+  #home .values ul li:nth-child(3){bottom: 70%; left: 48%; padding-bottom: 25px;}
+  #home .values ul li:nth-child(4){right: 9%; bottom: 56%;}
+  #home .values ul li:nth-child(5){right: 10%; bottom: 30%;}
+  #portfolio .Works5 .dt-box,#portfolio .Works6 .dt-box{padding-left: 70px;}
+  #contact ul{padding-left: 20px;}
+  #contact li{padding: 0;}
+  #contact .con1 ul li:nth-child(3){max-width: 60%;}
+}
+@media (min-width:992px){
+  #contact li{padding:0;}
 }
